@@ -46,6 +46,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('com.fasterxml.jackson.core:jackson-core')
+	compile('javax.xml.bind:jaxb-api:2.3.0')
 	testCompile('org.springframework.boot:spring-boot-starter-aop')
 	compile('org.liquibase:liquibase-core')
 	runtime('mysql:mysql-connector-java')

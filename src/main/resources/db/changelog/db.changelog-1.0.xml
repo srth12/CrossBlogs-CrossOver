@@ -28,4 +28,9 @@
 			<column name="content">Get a bowl and heat the water to reach boiling point. Put chicken egg for approximately 10 minutes.</column>
 		</insert>
 	</changeSet>
+    <changeSet id="create_index" author="srth12">
+        <createIndex tableName="article" indexName="article_title_index">
+            <column name="title" type="VARCHAR(255)" />
+        </createIndex>
+    </changeSet>
 </databaseChangeLog>
