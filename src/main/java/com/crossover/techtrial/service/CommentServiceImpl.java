@@ -18,7 +18,7 @@ public class CommentServiceImpl implements CommentService {
 	 * information.
 	 */
 	public List<Comment> findAll(Long articleId) {
-		return commentRepository.findAll();
+		return commentRepository.findByArticleIdOrderByDate(articleId);
 	}
 
 	/*
