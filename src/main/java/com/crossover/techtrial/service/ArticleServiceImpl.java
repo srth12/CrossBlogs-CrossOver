@@ -3,9 +3,11 @@ package com.crossover.techtrial.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import com.crossover.techtrial.model.Article;
 import com.crossover.techtrial.repository.ArticleRepository;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
@@ -21,6 +23,7 @@ public class ArticleServiceImpl implements ArticleService {
 		return articleRepository.findById(id).orElse(null);
 	}
 
+	@ResponseStatus(value=HttpStatus.NOT_FOUND, reason="No such article found")
 	public void delete(Long id) {
 		articleRepository.deleteById(id);
 	}

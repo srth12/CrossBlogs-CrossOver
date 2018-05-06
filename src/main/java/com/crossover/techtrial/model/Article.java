@@ -28,6 +28,8 @@ public class Article implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 5124000706092599751L;
+	public static final int MAX_TITLE_LENGTH = 120;
+	public static final int MAX_CONTENT_SIZE = 32768;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -25,6 +25,12 @@ public class ArticleController {
 
 	@PostMapping(path = "articles")
 	public ResponseEntity<Article> createArticle(@RequestBody Article article) {
+		if (article == null)
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		if (article.getTitle() != null &&article.getTitle().length() > Article.MAX_TITLE_LENGTH)
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		if (article.getContent() !=null && article.getContent().length() > Article.MAX_CONTENT_SIZE)
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		return new ResponseEntity<>(articleService.save(article), HttpStatus.CREATED);
 	}
 
