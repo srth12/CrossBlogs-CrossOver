@@ -3,3 +3,6 @@
 *.bat
 *.class
 *.jar
+*.bin
+*.lock
+.gradle/vcsWorkingDirs/gc.properties
